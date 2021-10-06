@@ -13,8 +13,7 @@ module.exports = (sequelize, DataTypes) => {
   }
   Division.init(
     {
-      title: DataTypes.STRING,
-      allowNull: true,
+      title: { type: DataTypes.STRING, allowNull: true },
     },
     {
       sequelize,

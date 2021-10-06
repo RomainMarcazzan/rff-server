@@ -2,20 +2,25 @@
   "name": "rff-server",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
+    "start": "nodemon server.js",
     "test": "echo \"Error: no test specified\" && exit 1",
+    "make-model": "npx sequelize-cli model:generate --name Player --attributes firstname:string,lastname:string,nickname:string,avatar:string ",
     "migrate": "npx sequelize-cli db:migrate",
     "migrateUndo": "npx sequelize-cli db:migrate:undo",
-    "make-seed": "npx sequelize-cli seed:generate --name groups",
+    "make-seed": "npx sequelize-cli seed:generate --name players",
     "seed": "npx sequelize-cli db:seed:all"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "cors": "^2.8.5",
     "dotenv": "^10.0.0",
+    "express": "^4.17.1",
     "mysql2": "^2.3.0",
+    "nodemon": "^2.0.13",
     "sequelize": "^6.6.5"
   },
   "devDependencies": {
